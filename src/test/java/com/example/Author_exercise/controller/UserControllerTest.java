@@ -41,7 +41,7 @@ class UserControllerTest {
         UserJoinRequest userJoinRequest = UserJoinRequest.builder()
                 .userName("kyeongrok")
                 .password("1q2w3e4r")
-                .email("oceanfog1@gmail.com")
+                .email("0313@naver.com")
                 .build();
 
         when(userService.join(any())).thenReturn(mock(UserDto.class));
@@ -58,9 +58,9 @@ class UserControllerTest {
     @DisplayName("회원가입 실패")
     void join_fail() throws Exception {
         UserJoinRequest userJoinRequest = UserJoinRequest.builder()
-                .userName("soonmin")
-                .password("1234")
-                .email("123@!@3")
+                .userName("kyeongrok")
+                .password("1q2w3e4r")
+                .email("0313@naver.com")
                 .build();
 
         when(userService.join(any())).thenThrow(new HospitalReviewAppException(ErrorCode.DUPLICATED_USER_NAME,""));
